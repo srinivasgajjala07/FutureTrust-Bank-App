@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Account - APANA Bank</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+            magin-bottom:200px;
+            background-color: #f8f9fd;
+            background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 247, 251) 100%);
+            padding: 30px 40px;
+            border-radius: 40px;
+            box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+        }
+   /* Home Button Styling */
+        .home-button {
+            background-color: #FF6F61;
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+            border-radius: 20px;
+            border: none;
+            text-align: center;
+            margin-top: 0; /* Remove margin-top for better alignment */
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-left: auto; /* Align button to the right */
+            margin-right: 20px; /* Space from the right edge */
+        }
+
+        .home-button:hover {
+            background-color: #e65c4d;
+        }
+
+        .home-button:active {
+            background-color: #e0463d;
+        }
+
+        /* Form Section */
+        .form-container {
+            text-align: center;
+        }
+
+        .form-container h3 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .form-container p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        /* Form Styling */
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form label {
+            align-self: flex-start;
+            font-weight: bold;
+            margin: 10px 0 5px;
+        }
+
+        .form input,
+        .form textarea {
+            width: 100%;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 20px;
+            border: 2px solid transparent;
+            background: white;
+            box-shadow: #cff0ff 0px 10px 10px -5px;
+            font-size: 1em;
+        }
+
+        .form input:focus,
+        .form textarea:focus {
+            outline: none;
+            border-color: #12B1D1;
+        }
+
+        .form textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            background-color: #005a87;
+            color: white;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 40%;
+        }
+
+        .submit-btn:hover {
+            background-color: #003f5d;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+
+    </style>
+    <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var repassword = document.getElementById("repassword").value;
+
+            if (password !== repassword) {
+                document.getElementById("error-message").innerText = "Passwords do not match!";
+                return false;
+            }
+
+            document.getElementById("error-message").innerText = ""; // Clear any previous error messages
+            return true;
+        }
+    </script>   
+</head>
+<body>
+       
+   
+    <div class="container">
+       
+        <section id="new-account" class="form-container">
+            <h3>Create New Account</h3>
+            <p>Open a new account with our simple process.</p>
+            <form action="NewAccountServlet" method="POST" class="form" onsubmit="return validateForm()">
+                
+                <input type="text" id="name" name="name" required placeholder="Enter your full name">
+               
+                <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                
+               
+                <input type="text" id="phone" name="phone" required placeholder="Enter your phone number">
+                
+               
+                <textarea id="address" name="address" required placeholder="Enter your address"></textarea>
+                
+             
+                <input type="number" id="deposit" name="deposit" min="1" required placeholder="Enter initial deposit amount">
+                
+          
+             
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+                
+                <input type="password" id="repassword" name="repassword" required placeholder="Re-enter your password">
+                
+             
+                <div id="error-message" class="error"></div>
+                
+                <button type="submit" class="submit-btn">Create Account</button>
+            </form>
+            
+        </section>
+</body>
+</html>

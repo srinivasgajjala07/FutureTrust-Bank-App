@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deposit Funds - Bank Application</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      background-color: #f3f4f6;
+      color: #333;
+    }
+
+    /* Header Styling */
+    .header {
+      background-color: #004d99;
+      padding: 15px 20px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header h1 {
+      font-size: 24px;
+    }
+
+    .header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .header nav ul li {
+      display: inline;
+    }
+
+    .header nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .header nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: linear-gradient(135deg, #ffffff, #f7f8fa);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.15);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .container h2 {
+      font-size: 26px;
+      color: #004d99;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      color: #333;
+      font-size: 14px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 15px;
+      padding-left: 45px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9fafb;
+      color: #333;
+      transition: all 0.3s;
+    }
+
+    .form-group input:focus {
+      border-color: #004d99;
+      outline: none;
+      box-shadow: 0px 0px 8px rgba(0, 77, 153, 0.2);
+    }
+
+    .form-group i {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      color: #888;
+      font-size: 18px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #004d99;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    .btn-submit:hover {
+      background-color: #003366;
+    }
+
+    .info {
+      font-size: 12px;
+      color: #777;
+      margin-top: 15px;
+    }
+
+    .info a {
+      color: #004d99;
+      text-decoration: none;
+    }
+
+    /* Footer Styling */
+    .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .footer a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <h1>Bank Application</h1>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <div class="container">
+      <h2>Deposit Funds</h2>
+      <form action="deposit" method="post">
+        <div class="form-group">
+          <label for="account-number">Account Number</label>
+          <i class="fas fa-user-circle"></i>
+          <input type="text" id="account-number" name="accountNumber" required placeholder="Enter your account number">
+        </div>
+        <div class="form-group">
+          <label for="amount">Deposit Amount</label>
+          <i class="fas fa-dollar-sign"></i>
+          <input type="number" id="amount" name="amount" min="1" step="0.01" required placeholder="Enter amount to deposit">
+        </div>
+        <div class="form-group">
+          <label for="password">password</label>
+          <i class="fas fa-pencil-alt"></i>
+          <input type="password" id="password" name="password" placeholder="password">
+        </div>
+        <button type="submit" class="btn-submit">Deposit Now</button>
+      </form>
+      <p class="info">New User ? <a href="newaccount.html">CreateAccount</a></p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2024 Bank Application. All rights reserved. | <a href="/privacy-policy">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>
